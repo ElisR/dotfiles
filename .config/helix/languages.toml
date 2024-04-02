@@ -1,0 +1,54 @@
+[language-server.ruff-lsp]
+command = "ruff-lsp"
+
+[language-server.ruff-lsp.config]
+documentFormatting = true 
+settings.run = "onSave"
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = [ "--stdio",  ]
+
+[language-server.pyright.config]
+reportMissingTypeStubs = false
+reportOptionalMemberAcces = false
+
+# [language-server.pyright.python]
+# pythonPath = "/Users/e.roberts/anaconda3/envs/viral/bin/python"
+# pythonVersion = "3.9"
+
+# Things that don't seem to work
+# command = "pyright-lsp-helix"
+# config.venvPath = "/Users/e.roberts/anaconda3/envs/viral/bin/python"
+# config.venv = "viral"
+
+# config.pythonPath = "/Users/e.roberts/anaconda3/envs/viral/bin/python"
+
+[[language]]
+name = "python"
+auto-format = true
+language-servers = [
+  { name = "ruff-lsp", only-features = [ "format", "diagnostics", "code-action" ] },
+  { name = "pyright", except-features = [ "format", "diagnostics", "code-action" ] },
+]
+
+[language.debugger]
+name = "debugpy"
+transport = "stdio"
+command = "python3"
+args = ["-m",  "debugpy.adapter"]
+
+[[language.debugger.templates]]
+name = "source"
+request = "launch"
+completion = [ { name = "entrypoint", completion = "filename", default = "." } ]
+args = { mode = "debug", program = "{0}"}
+
+
+[[language]]
+name = "rust"
+language-servers = [ "rust-analyzer" ]
+auto-format=true
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"

@@ -1,0 +1,24 @@
+theme = "solarized_light"
+
+[editor]
+bufferline = "always"
+line-number = "relative"
+idle-timeout = 0
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.indent-guides]
+render = true
+character = "╎"
+skip-levels = 1
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control"]
+
+[editor.lsp]
+display-inlay-hints = true
+
+[keys.normal.space]
+q = ":quit"
+x = ":buffer-close"
