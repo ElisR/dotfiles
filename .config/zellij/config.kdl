@@ -1,5 +1,7 @@
 simplified_ui true
 
+default_shell "nu"
+
 theme "solarized-light"
 
 themes {
