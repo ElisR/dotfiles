@@ -96,6 +96,8 @@ $env.NU_PLUGIN_DIRS = [
 # path add /some/path
 # path add ($env.CARGO_HOME | path join "bin")
 # path add ($env.HOME | path join ".local" "bin")
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME | path join ".cargo" "bin"))
 # $env.PATH = ($env.PATH | uniq)
 
 # To load from a custom file you can use:
