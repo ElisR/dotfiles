@@ -808,6 +808,7 @@ alias zj = zellij --layout compact
 alias dot = git --git-dir ($env.HOME | path join .dotfiles) --work-tree $env.HOME
 alias lazydot = lazygit --git-dir ($env.HOME | path join .dotfiles) --work-tree $env.HOME
 
+use "~/Library/Application Support/nushell/scripts/conda.nu"
 
 source ~/.zoxide.nu
 use ~/.cache/starship/init.nu
