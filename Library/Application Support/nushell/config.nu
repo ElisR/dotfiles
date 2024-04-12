@@ -805,8 +805,8 @@ alias z = zoxide
 
 alias zj = zellij --layout compact
 # Managing dotfiles
-alias dot = usr/bin/git --git-dir $env.HOME/.dotfiles/ --work-tree $env.HOME
-alias lazydot = lazygit --git-dir $env.HOME/.dotfiles/ --work-tree $env.HOME
+alias dot = git --git-dir ($env.HOME | path join .dotfiles) --work-tree $env.HOME
+alias lazydot = lazygit --git-dir ($env.HOME | path join .dotfiles) --work-tree $env.HOME
 
 
 source ~/.zoxide.nu
