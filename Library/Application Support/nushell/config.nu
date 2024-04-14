@@ -808,6 +808,12 @@ alias zj = zellij --layout compact
 alias dot = git --git-dir ($env.HOME | path join .dotfiles) --work-tree $env.HOME
 alias lazydot = lazygit --git-dir ($env.HOME | path join .dotfiles) --work-tree $env.HOME
 
+
+def add_conda [] {
+    $env.PATH = ($env.PATH | split row (char esep) | prepend $env.CONDA_PREFIX)
+}
+
+
 use "~/Library/Application Support/nushell/scripts/conda.nu"
 
 source ~/.zoxide.nu

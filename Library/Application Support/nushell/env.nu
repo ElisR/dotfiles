@@ -100,8 +100,7 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME | path join ".cargo" "bin"))
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/Users/e.roberts/anaconda3/condabin')
 
-
-# $env.PATH = ($env.PATH | uniq)
+$env.PATH = ($env.PATH | uniq)
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
