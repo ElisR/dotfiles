@@ -808,6 +808,7 @@ alias zj = zellij --layout compact
 alias dot = git --git-dir ($env.HOME | path join .dotfiles) --work-tree $env.HOME
 alias lazydot = lazygit --git-dir ($env.HOME | path join .dotfiles) --work-tree $env.HOME
 
+alias lg = lazygit
 
 def add_conda [] {
     $env.PATH = ($env.PATH | split row (char esep) | prepend $env.CONDA_PREFIX)
