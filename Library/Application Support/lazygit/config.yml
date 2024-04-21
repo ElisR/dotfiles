@@ -1,0 +1,8 @@
+git:
+  parseEmoji: true
+  paging:
+    colorArg: always
+    pager: delta --light --paging=never
+gui:
+  nerdFontsVersion: "3"
+  sidePanelWidth: 0.25
