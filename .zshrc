@@ -1,4 +1,4 @@
-alias ls="exa --icons"
+alias ls="eza --icons"
 
 alias zj="zellij --layout compact"
 
