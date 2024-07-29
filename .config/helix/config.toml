@@ -4,7 +4,6 @@ theme = "solarized_light"
 bufferline = "always"
 line-number = "relative"
 idle-timeout = 0
-shell = ["nu", "-c"]
 
 [editor.cursor-shape]
 insert = "bar"

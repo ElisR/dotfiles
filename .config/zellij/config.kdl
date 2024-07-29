@@ -1,6 +1,6 @@
 simplified_ui true
 
-default_shell "nu"
+default_shell "zsh"
 
 theme "solarized-light"
 
