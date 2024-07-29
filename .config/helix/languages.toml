@@ -1,7 +1,15 @@
-[language-server.ruff-lsp]
-command = "ruff-lsp"
+# [language-server.ruff-lsp]
+# command = "ruff-lsp"
 
-[language-server.ruff-lsp.config]
+# [language-server.ruff-lsp.config]
+# documentFormatting = true 
+# settings.run = "onSave"
+
+[language-server.ruff]
+command = "ruff"
+args = ["server", "--preview"]
+
+[language-server.ruff.config]
 documentFormatting = true 
 settings.run = "onSave"
 
@@ -28,7 +36,7 @@ reportOptionalMemberAcces = false
 name = "python"
 auto-format = true
 language-servers = [
-  { name = "ruff-lsp", only-features = [ "format", "diagnostics", "code-action" ] },
+  { name = "ruff", only-features = [ "format", "diagnostics", "code-action" ] },
   { name = "pyright", except-features = [ "format", "diagnostics", "code-action" ] },
 ]
 
