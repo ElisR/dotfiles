@@ -1,8 +1,1 @@
-git:
-  parseEmoji: true
-  paging:
-    colorArg: always
-    pager: delta --light --paging=never
-gui:
-  nerdFontsVersion: "3"
-  sidePanelWidth: 0.25
+/nix/store/kl9qb9qmjd9jck1dfdqmnx1jqn6s856a-home-manager-files/Library/Application Support/lazygit/config.yml

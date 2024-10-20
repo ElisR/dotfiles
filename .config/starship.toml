@@ -1,13 +1,1 @@
-add_newline = false
-
-[aws]
-disabled = true
-
-[gcloud]
-disabled = true
-
-[nodejs]
-disabled = true
-
-[package]
-disabled = true
+/nix/store/kl9qb9qmjd9jck1dfdqmnx1jqn6s856a-home-manager-files/.config/starship.toml
