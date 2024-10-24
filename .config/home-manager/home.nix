@@ -16,7 +16,7 @@
   home.shellAliases = {
     zj = "zellij --layout compact";
     ls = "eza --icons";
-    dot = "/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME";
+    dot = "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME";
     lazydot = "lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME";
   };
 
