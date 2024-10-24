@@ -2,6 +2,7 @@
 
 {
   home.packages = [
+    pkgs.git
     pkgs.presenterm
     pkgs.zoxide
     pkgs.eza
@@ -17,6 +18,8 @@
     pkgs.ruff
     pkgs.pyright
     pkgs.starship
+    pkgs.pixi
+    pkgs.uv
   ];
 
   programs = {
@@ -26,6 +29,70 @@
     helix = {
       enable = true;
       defaultEditor = true;
+      settings = {
+        theme = "solarized_light";
+        editor = {
+          bufferline = "always";
+          line-number = "relative";
+          idle-timeout = 0;
+          cursor-shape.insert = "bar";
+          indent-guides = {
+            render = true;
+            character = "╎";
+            skip-levels = 1;
+          };
+          statusline.left = ["mode" "spinner" "file-name" "version-control"];
+          lsp.display-inlay-hints = true;
+          file-picker.hidden = false;
+        };
+        keys.normal.space = {
+          q = ":quit";
+          x = ":buffer-close";
+        };
+      };
+      languages = {
+        language-server.ruff = {
+          command = "ruff";
+          args = ["server"];
+          config = {
+            documentFormatting = true;
+            settings.run = "onSave";
+          };
+        };
+
+        language-server.pyright = {
+          command = "pyright-langserver";
+          args = ["--stdio"];
+          config = {
+            reportMissingTypeStubs = false;
+            reportOptionalMemberAcces = false;
+          };
+        };
+        language-server.rust-analyzer = {
+          config.check.command = "clippy";
+        };
+        language = [
+          {
+            name = "python";
+            auto-format = true;
+            language-servers = [
+              {
+                name = "ruff";
+                only-features = [ "format" "diagnostics" "code-action" ];
+              }
+              {
+                name = "pyright";
+                except-features = [ "format" "diagnostics" "code-action" ];
+              }
+            ];
+          }
+          {
+            name = "rust";
+            language-servers = ["rust-analyzer"];
+            auto-format = true;
+          }
+        ];
+      };
     };
     lazygit = {
       enable = true;
