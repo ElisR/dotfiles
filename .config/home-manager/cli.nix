@@ -3,6 +3,7 @@
 {
   home.packages = [
     pkgs.git
+    pkgs.gh
     pkgs.presenterm
     pkgs.zoxide
     pkgs.eza
@@ -26,12 +27,18 @@
     zsh = {
       enable = true;
     };
+    git = {
+      enable = true;
+      userName = "Elis Roberts";
+      userEmail = "19764906+ElisR@users.noreply.github.com";
+    };
     helix = {
       enable = true;
       defaultEditor = true;
       settings = {
         theme = "solarized_light";
         editor = {
+          true-color = true;
           bufferline = "always";
           line-number = "relative";
           idle-timeout = 0;
@@ -126,7 +133,7 @@
     };
     zellij = {
       enable = true;
-      enableZshIntegration = true;
+      enableZshIntegration = false;
       settings = {
         simplified_ui = true;
         default_shell = "zsh";
