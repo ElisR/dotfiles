@@ -21,6 +21,7 @@
     pkgs.starship
     pkgs.pixi
     pkgs.uv
+    pkgs.atuin
   ];
 
   programs = {
@@ -31,6 +32,10 @@
       enable = true;
       userName = "Elis Roberts";
       userEmail = "19764906+ElisR@users.noreply.github.com";
+    };
+    atuin = {
+      enable = true;
+      enableZshIntegration = true;
     };
     helix = {
       enable = true;
