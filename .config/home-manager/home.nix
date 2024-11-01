@@ -18,6 +18,7 @@
     ls = "eza --icons";
     dot = "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME";
     lazydot = "lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME";
+    lg = "lazygit";
   };
 
   # This value determines the Home Manager release that your configuration is
