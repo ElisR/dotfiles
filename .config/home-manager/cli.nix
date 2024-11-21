@@ -22,6 +22,8 @@
     pkgs.pixi
     pkgs.uv
     pkgs.atuin
+    pkgs.rustc
+    pkgs.cargo
   ];
 
   programs = {
