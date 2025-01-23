@@ -8,8 +8,8 @@
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "elisr";
-  home.homeDirectory = "/Users/elisr";
+  home.username = "e.roberts";
+  home.homeDirectory = "/Users/e.roberts";
 
 
   # Aliases
