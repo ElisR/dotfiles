@@ -63,6 +63,9 @@
           q = ":quit";
           x = ":buffer-close";
         };
+        keys.insert = {
+          "C-[" = "normal_mode";
+        };
       };
       languages = {
         language-server.ruff = {
