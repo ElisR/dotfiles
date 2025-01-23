@@ -24,6 +24,8 @@
     pkgs.atuin
     pkgs.rustc
     pkgs.cargo
+    pkgs.devenv
+    pkgs.direnv
   ];
 
   programs = {
