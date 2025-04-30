@@ -11,6 +11,13 @@
   home.username = "e.roberts";
   home.homeDirectory = "/Users/e.roberts";
 
+  # Extra stuff added to path
+  # Needed because I removed `cargo` from `nix`
+  home.sessionPath = [
+    "$HOME/.pixi/bin"
+    "$HOME/.cargo/bin"
+  ];
+
 
   # Aliases
   home.shellAliases = {
