@@ -6,10 +6,7 @@
   ];
 
 
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home.username = "e.roberts";
-  home.homeDirectory = "/Users/e.roberts";
+  # home.username and home.homeDirectory are set per machine, in flake.nix.
 
   # Extra stuff added to path
   # Needed because I removed `cargo` from `nix`
