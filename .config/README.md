@@ -23,13 +23,13 @@ whose work tree is `$HOME`.
 
    ```shell
    sh <(curl -L https://nixos.org/nix/install)
-   nix run home-manager/master -- switch -b backup --flake ~/.config/home-manager#e.roberts
+   nix run home-manager/master -- switch -b backup --flake ~/.config/home-manager#elisr
    ```
 
-   `e.roberts` is the personal MacBook. Work machines use a separate, private flake that imports
+   `elisr` is the personal MacBook. Work machines use a separate, private flake that imports
    this one's `homeModules.default` and adds the machine-specific parts; follow its README instead.
 
-3. Open a new terminal. From now on, `home-manager switch --flake ~/.config/home-manager#e.roberts`
+3. Open a new terminal. From now on, `home-manager switch --flake ~/.config/home-manager#elisr`
    applies changes.
 
 4. To push, log in to GitHub once with `gh auth login`. `git` already uses `gh` for credentials.

@@ -14,7 +14,7 @@
     # The machine-independent configuration, so that other flakes can build on it.
     homeModules.default = ./home.nix;
 
-    homeConfigurations."e.roberts" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."elisr" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages."aarch64-darwin";
 
       # Specify your home configuration modules here, for example,
@@ -24,8 +24,8 @@
         {
           # Home Manager needs a bit of information about you and the paths it should
           # manage.
-          home.username = "e.roberts";
-          home.homeDirectory = "/Users/e.roberts";
+          home.username = "elisr";
+          home.homeDirectory = "/Users/elisr";
         }
       ];
 
