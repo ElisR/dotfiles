@@ -11,6 +11,7 @@
   # Extra stuff added to path
   # Needed because I removed `cargo` from `nix`
   home.sessionPath = [
+    "$HOME/.local/bin"
     "$HOME/.pixi/bin"
     "$HOME/.cargo/bin"
   ];

@@ -29,16 +29,23 @@
   programs = {
     zsh = {
       enable = true;
+      profileExtra = ''
+        if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+          . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+        fi
+      '';
     };
     git = {
       enable = true;
-      userName = "Elis Roberts";
-      userEmail = "19764906+ElisR@users.noreply.github.com";
-      # Let `gh` supply GitHub credentials for HTTPS pushes (what `gh auth setup-git` would
-      # write, but that can't edit the read-only, home-manager-generated git config).
-      extraConfig.credential = {
-        "https://github.com".helper = [ "" "!${pkgs.gh}/bin/gh auth git-credential" ];
-        "https://gist.github.com".helper = [ "" "!${pkgs.gh}/bin/gh auth git-credential" ];
+      settings = {
+        user.name = "Elis Roberts";
+        user.email = "19764906+ElisR@users.noreply.github.com";
+        # Let `gh` supply GitHub credentials for HTTPS pushes (what `gh auth setup-git` would
+        # write, but that can't edit the read-only, home-manager-generated git config).
+        credential = {
+          "https://github.com".helper = [ "" "!${pkgs.gh}/bin/gh auth git-credential" ];
+          "https://gist.github.com".helper = [ "" "!${pkgs.gh}/bin/gh auth git-credential" ];
+        };
       };
     };
     atuin = {
