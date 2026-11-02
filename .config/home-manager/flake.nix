@@ -10,11 +10,21 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Only for the few packages that must be newer than the stable branch (see `fromUnstable`).
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
-  outputs = { nixpkgs, home-manager, ... }: {
+  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, ... }:
+    let
+      # atuin upgrades its history database on first run and older versions then refuse to open
+      # it, so once a newer atuin has run it must never go back to an older one.
+      fromUnstable = { pkgs, ... }: {
+        programs.atuin.package =
+          nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.atuin;
+      };
+    in {
     # The machine-independent configuration, so that other flakes can build on it.
-    homeModules.default = ./home.nix;
+    homeModules.default = { imports = [ ./home.nix fromUnstable ]; };
 
     homeConfigurations."elisr" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages."aarch64-darwin";
@@ -22,7 +32,7 @@
       # Specify your home configuration modules here, for example,
       # the path to your home.nix.
       modules = [
-        ./home.nix
+        self.homeModules.default
         {
           # Home Manager needs a bit of information about you and the paths it should
           # manage.

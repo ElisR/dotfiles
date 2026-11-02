@@ -20,7 +20,6 @@
     pkgs.starship
     pkgs.pixi
     pkgs.uv
-    pkgs.atuin
     pkgs.rustup
     pkgs.devenv
     pkgs.direnv
