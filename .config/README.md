@@ -23,7 +23,7 @@ whose work tree is `$HOME`.
 
    ```shell
    sh <(curl -L https://nixos.org/nix/install)
-   nix run home-manager/master -- switch -b backup --flake ~/.config/home-manager#elisr
+   nix run home-manager/release-26.05 -- switch -b backup --flake ~/.config/home-manager#elisr
    ```
 
    `elisr` is the personal MacBook. Work machines use a separate, private flake that imports
